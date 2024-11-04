@@ -1,10 +1,12 @@
-export async function fetchEvents(searchTerm) {
+export async function fetchEvents({ signal , searchTerm }) {
+  console.log('searchTerm', searchTerm);
+
   let url = 'http://localhost:3000/events'; 
   if(searchTerm){
       url += '?searchTerm=' + searchTerm; 
   }
   
-    const response = await fetch(url);
+    const response = await fetch(url , { signal: signal});
     if (!response.ok) {
       const error = new Error('An error occurred while fetching the events');
       error.code = response.status;

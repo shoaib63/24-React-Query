@@ -14,7 +14,7 @@ export default function NewEventsSection() {
     queryFn: fetchEvents,
     staleTime: 5000,
     // gcTime: 30000
-  }); 
+  });
 
   let content;
 
