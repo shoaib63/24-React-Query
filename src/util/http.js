@@ -1,21 +1,13 @@
-<<<<<<< HEAD
-export async function fetchEvents({ signal, searchTerm }) {
-=======
-export async function fetchEvents({ signal , searchTerm }) {
-  console.log('searchTerm', searchTerm);
 
->>>>>>> 56bcd845e3813a1b023b57094de2899cc09b0f5c
+
+export async function fetchEvents({ signal, searchTerm }) {
   let url = 'http://localhost:3000/events'; 
   if(searchTerm){
       url += '?search=' + searchTerm; 
   }
   
-<<<<<<< HEAD
   const response = await fetch(url, { signal: signal });
 
-=======
-    const response = await fetch(url , { signal: signal});
->>>>>>> 56bcd845e3813a1b023b57094de2899cc09b0f5c
     if (!response.ok) {
       const error = new Error('An error occurred while fetching the events');
       error.code = response.status;
